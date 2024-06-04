@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Reenie+Beanie&family=Shadows+Into+Light&display=swap');
+:root{
+    --color-1: #0f1016;
+    --text-color: #f0f0f0;
+    --accent-color:#006aff;
+}
+body{
+    background-image: url(sonapa3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0px -195px;
+}
+.main-content{
+    position: absolute;
+    top: 12%;
+    left: 10%;
+    text-align: justify;
+
+    color: rgb(255, 255, 0);
+    
+    /* font-size: 35px; */
+}
+
+.mobile-nav{
+    position: fixed;
+    left: -100%;
+    top: 0;
+}
+nav{
+    height: 60px;
+    background-color:var(--color-1);
+    /* display: flex will align at very end */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.links-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    /* row is by default */
+    flex-direction: row; 
+    /* center everything vertically */
+    align-items: center;    
+}
+nav a{
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color)
+}
+
+nav a:hover{
+    background-color: var(--accent-color);
+}
+nav .home-link{
+    /* it gives maximum margin to the right */
+    margin-right: auto;
+}
+nav svg{
+    fill: var(--text-color);
+    padding: 10px 5px;
+}
+
+#sidebar-active{
+    display:none;
+}
+.open-sidebar-button, .close-sidebar-button{
+    display: none;
+}
+
+.footer{
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom:0;
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 60px;
+    width: 100%;
+    color: rgb(49, 238, 49);
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: "Shadows Into Light", cursive, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media (max-width: 400px) {
+
+body{
+    background-image: url(sonapa32.jpg);
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-position: px 0px ;
+}
+    .links-container{
+    width: 300px;
+    /* row is by default */
+    flex-direction: column; 
+    /* center everything vertically */
+    align-items: flex-start; 
+    position: fixed;
+    top:0;
+    left: -100%;  
+    z-index: 10; 
+    background-color: var(--color-1);
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+
+    transition: 0.55s ease-out;
+    }
+
+    nav a{
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: var(--text-color)
+    }
+
+
+    .open-sidebar-button, .close-sidebar-button{
+        display: block;
+    }
+
+    #sidebar-active:checked ~ .links-container{
+        left: 0;
+    }
+   
+    #sidebar-active:checked ~ #overlay{
+        background: rgb(0, 0, 0, 0.5) ;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 9;
+    }
+
+    .mobile-nav{
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+}
+
+
+
